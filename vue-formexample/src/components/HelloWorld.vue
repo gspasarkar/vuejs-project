@@ -29,9 +29,12 @@
           </div>
           <div>
             <label for="city">City:</label>
-            <select  name="cities" v-model="selectedValue" >
+            <select  name="cities"  >
               <option v-for="(city,index) of formdata.cities" :key="index" :value="city"  >{{city}}</option>
             </select>
+          </div>
+          <div>
+            <button @click.prevent="submitForm(), printLog()">Save</button>
           </div>
       </form>
   </div>
@@ -56,13 +59,16 @@ export default{
           address:'',
           country:'',
           cities:['Pune','Nagpur','Mumbai'],
-          selectedValue: 'Mumbai',
+        
         }
       }
     },
     methods: {
+      printLog(){
+        console.log("Print here")
+      },
       submitForm(){
-          this.option.value = selected
+         console.log(this.formdata)
       }
     }
 }
