@@ -1,35 +1,21 @@
 <template>
   <div>
-    <p>Full Name: {{ fullName }}</p>
-    <p>First Name: {{ firstName }}</p>
-    <p>Last Name: {{ lastName }}</p>
-    <input type="text" v-model.lazy.trim="fullName">
-    <button @click="changeName">Update</button>
+    <P>count: {{count}}</P>
+    <button @click="count++">Increment</button>
+    <button @click="count--">Decrement</button>
   </div>
 </template>
 <script>
-export default {
+export default{
   data () {
     return {
-      firstName: 'Kapil',
-      lastName: 'Jagtap'
+      count: 0
     }
   },
-  methods: {
-    changeName () {
-      this.fullName = 'Vijay Nagle'
-    }
-  },
-  computed: {
-    fullName: {
-      get () {
-        return this.firstName + ' ' + this.lastName
-      },
-      set (name) {
-        console.log(name)
-        const names = name.split(' ')
-        this.firstName = names[0]
-        this.lastName = names[1]
+  watch: {
+    count (newValue) {
+      if (newValue === 5) {
+        alert('Sound is High.')
       }
     }
   }
