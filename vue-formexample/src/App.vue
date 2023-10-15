@@ -1,21 +1,25 @@
 <template>
   <div>
-     <p>Search for a film: <input type="text" v-model="filmName"></p>
+    <p>Enter Film Title:<input type="text" v-model.lazy="film.title"></p>
+    <p>Film Title:{{ film.title }}</p>
   </div>
 </template>
 <script>
 export default {
   data () {
     return {
-      filmName: 'Jailor'
+      film: {
+        title: ''
+      }
     }
   },
   watch: {
-    filmName: {
+    film: {
       handler (newValue) {
-        console.log('Calling API for ' + newValue)
+        console.log('Hello')
+        console.log('Film: ' + newValue.title)
       },
-      immediate: true
+      deep: true
     }
   }
 }
