@@ -1,22 +1,21 @@
 <template>
   <div>
-    <p>Count:{{ count }}</p>
-    <button @click=count++>Increment</button>
-    <button @click=count-->Decrement</button>
+     <p>Search for a film: <input type="text" v-model="filmName"></p>
   </div>
 </template>
 <script>
 export default {
   data () {
     return {
-      count: 0
+      filmName: 'Jailor'
     }
   },
   watch: {
-    count (newValue, oldValue) {
-      if (newValue > oldValue && oldValue === 5) {
-        alert('You are at peak sound, this is danger for you.')
-      }
+    filmName: {
+      handler (newValue) {
+        console.log('Calling API for ' + newValue)
+      },
+      immediate: true
     }
   }
 }
