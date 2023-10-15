@@ -1,34 +1,35 @@
-<!--For Notes check Asset folder-->
 <template>
-  <div id="app">
-    Computed {{ isImportant }}<br>
-    Method {{ num }}
-    <br>
-    <input type="text" v-model.lazy="fullName"><br>
-    <br>
-    <button @click="chkNum()">Save</button>
+  <div>
+    <p>Full Name: {{ fullName }}</p>
+    <p>First Name: {{ firstName }}</p>
+    <p>Last Name: {{ lastName }}</p>
+    <input type="text" v-model.lazy.trim="fullName">
+    <button @click="changeName">Update</button>
   </div>
 </template>
 <script>
 export default {
-  name: 'computed_property',
   data () {
     return {
-      fullName: 'ganesh',
-      num: ''
+      firstName: 'Kapil',
+      lastName: 'Jagtap'
     }
   },
   methods: {
-    chkNum () {
-      console.log('Method called')
-      this.num++
+    changeName () {
+      this.fullName = 'Vijay Nagle'
     }
   },
   computed: {
-    isImportant () {
-      console.log('name computed called')
-      if (this.fullName) {
-        return this.fullName
+    fullName: {
+      get () {
+        return this.firstName + ' ' + this.lastName
+      },
+      set (name) {
+        console.log(name)
+        const names = name.split(' ')
+        this.firstName = names[0]
+        this.lastName = names[1]
       }
     }
   }
