@@ -1,7 +1,6 @@
-/* eslint-disable */
 <template>
 <div>
-  <button @click="filmList.push('Titanic')">Add Film</button>
+  <button @click="filmList.push('Kantara')">Add Film</button>
 </div>
 </template>
 <script>
@@ -14,9 +13,10 @@ export default {
   watch: {
     filmList: {
       handler (newValue) {
-        console.log('Movie Title', newValue)
+        console.log('Current Films:', newValue)
       },
-      deep: true
+      deep: true,
+      immediate: true
     }
   }
 }
