@@ -1,23 +1,20 @@
+/* eslint-disable */
 <template>
-  <div>
-    <p>Enter Film Title:<input type="text" v-model.lazy="film.title"></p>
-    <p>Film Title:{{ film.title }}</p>
-  </div>
+<div>
+  <button @click="filmList.push('Titanic')">Add Film</button>
+</div>
 </template>
 <script>
 export default {
   data () {
     return {
-      film: {
-        title: ''
-      }
+      filmList: ['Jailor', 'Jawaan']
     }
   },
   watch: {
-    film: {
+    filmList: {
       handler (newValue) {
-        console.log('Hello')
-        console.log('Film: ' + newValue.title)
+        console.log('Movie Title', newValue)
       },
       deep: true
     }
