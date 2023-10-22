@@ -1,9 +1,21 @@
 <template>
-  <hello-world></hello-world>
+  <div>
+    <component-a/>
+    <component-b/>
+    <component-c/>
+  </div>
 </template>
+
 <script>
-import HelloWorld from './components/HelloWorld'
-export default {
-  components: { HelloWorld }
+import ComponentA from './components/ComponentA'
+import ComponentB from './components/ComponentB'
+import ComponentC from './components/ComponentC'
+
+export default{
+  components: {
+    ComponentA,
+    ComponentB,
+    ComponentC
+  }
 }
 </script>
