@@ -1,9 +1,10 @@
 <template>
-  <hello-world></hello-world>
+  <greeting-message firstname="Ganesh" lastname="Pasarkar" city="Pune"></greeting-message>
 </template>
 <script>
-import HelloWorld from './components/HelloWorld'
-export default {
-  components: { HelloWorld }
+import GreetingMessage from './components/GreetingMessage'
+
+export default{
+  components: { GreetingMessage }
 }
 </script>

@@ -1,10 +1,10 @@
 <template>
     <div>
-        Hello {{name}}
+        Hello {{firstname}} {{lastname}}. You city is {{city}}
     </div>
 </template>
 <script>
 export default{
-  props: ['name']
+  props: ['firstname', 'lastname', 'city']
 }
 </script>
