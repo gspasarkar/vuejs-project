@@ -1,10 +1,20 @@
 <template>
-  <greeting-message firstname="Ganesh" lastname="Pasarkar" city="Pune"></greeting-message>
+<dynamic-prop v-bind:fullName="fullName"></dynamic-prop>
 </template>
 <script>
-import GreetingMessage from './components/GreetingMessage'
-
+import DynamicProp from './components/DynamicProp'
 export default{
-  components: { GreetingMessage }
+  components: {DynamicProp},
+  data () {
+    return {
+      firstName: 'Ganesh',
+      lastName: 'Pasarkar'
+    }
+  },
+  computed: {
+    fullName () {
+      return this.firstName + ' ' + this.lastName
+    }
+  }
 }
 </script>
