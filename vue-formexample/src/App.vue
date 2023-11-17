@@ -1,20 +1,14 @@
 <template>
-<dynamic-prop v-bind:fullName="fullName"></dynamic-prop>
+    <component-a>Root App</component-a>
 </template>
+
 <script>
-import DynamicProp from './components/DynamicProp'
-export default{
-  components: {DynamicProp},
-  data () {
-    return {
-      firstName: 'Ganesh',
-      lastName: 'Pasarkar'
-    }
-  },
-  computed: {
-    fullName () {
-      return this.firstName + ' ' + this.lastName
-    }
+import componentA from './components/ComponentA'
+
+export default {
+  components: { componentA },
+  provide: {
+    username: 'John'
   }
 }
 </script>
