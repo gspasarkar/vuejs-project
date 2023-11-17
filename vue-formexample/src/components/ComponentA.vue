@@ -1,9 +1,5 @@
 <template>
-    <component-b>A</component-b>
+<div>
+ <p>Component A</p><hr>
+</div>
 </template>
-<script>
-import componentB from './ComponentB'
-export default {
-  components: { componentB }
-}
-</script>

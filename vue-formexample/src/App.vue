@@ -1,14 +1,23 @@
 <template>
-    <component-a>Root App</component-a>
+<div>
+  <p>{{username}}</p><hr>
+  <component-a></component-a>
+</div>
 </template>
-
 <script>
-import componentA from './components/ComponentA'
+import ComponentA from './components/ComponentA'
 
-export default {
-  components: { componentA },
-  provide: {
-    username: 'John'
+export default{
+  components: { ComponentA },
+  data () {
+    return {
+      username: 'Raj'
+    }
+  },
+  provide () {
+    return {
+      username: this.username
+    }
   }
 }
 </script>
