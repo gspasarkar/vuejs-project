@@ -1,22 +1,17 @@
 <template>
-<div>
-  <p>{{username}}</p><hr>
-  <component-a></component-a>
-</div>
+ <div>
+   <button @click="isMenuOpen=true">Open Menu</button>
+   <component-mainmenu v-show="isMenuOpen" @closeMenu="isMenuOpen=false">Main Menu</component-mainmenu>
+ </div>
 </template>
 <script>
-import ComponentA from './components/ComponentA'
+import MainMenu from './components/MainMenu.vue'
 
 export default{
-  components: { ComponentA },
+  components: { MainMenu },
   data () {
     return {
-      username: 'Raj'
-    }
-  },
-  provide () {
-    return {
-      username: this.username
+      isMenuOpen: false
     }
   }
 }
